@@ -5,7 +5,7 @@ var jwt = require("jsonwebtoken");
 const getAllUsers = async (req, res) => {
   try {
   
-    const allUsers = req.user.role == "Admin" ? await userService.getAllUsers() : await userService.getAllUsersByCompanys(req.user.company);
+    const allUsers = req.user.role == "Admin" ? await userService.getAllUsers() : await userService.getAllUsersByCompany(req.user.company);
  
     res.send({ status: "OK", data: allUsers });
   } catch (error) {
